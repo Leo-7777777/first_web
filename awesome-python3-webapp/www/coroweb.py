@@ -120,7 +120,7 @@ class RequestHandler(object):
                 kw = copy
             # check named arg:
             for k, v in request.match_info.items():
-                if k in kw:
+                if k in kw:  #kw为请求参数字段
                     logging.warning('Duplicate arg name in named arg and kw args: %s' % k)
                 kw[k] = v
         if self._has_request_arg:
